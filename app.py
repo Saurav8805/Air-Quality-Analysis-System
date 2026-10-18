@@ -77,12 +77,28 @@ st.markdown(
 
     /* Completely hide default Streamlit toolbar, Deploy button, and footer */
     header[data-testid="stHeader"],
+    header[data-testid="stAppHeader"],
+    .stAppHeader,
     div[data-testid="stToolbar"],
     #MainMenu,
     footer {
         display: none !important;
         visibility: hidden !important;
-        height: 0 !important;
+        height: 0px !important;
+        min-height: 0px !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Remove default sidebar header top gap */
+    [data-testid="stSidebarHeader"],
+    div[data-testid="stSidebarHeader"],
+    header[data-testid="stSidebarHeader"] {
+        display: none !important;
+        height: 0px !important;
+        min-height: 0px !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     /* ── PRISTINE CANVAS WITH ATMOSPHERIC GLASS REFRACTION MESH ── */
@@ -99,16 +115,21 @@ st.markdown(
         color: #0f172a;
     }
 
-    /* ── SIDEBAR — sleek frosted glass control panel ── */
+    /* ── SIDEBAR — sleek frosted glass control panel with crisp separator ── */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, rgba(245, 248, 252, 0.90) 0%, rgba(240, 244, 250, 0.85) 100%) !important;
+        background: linear-gradient(180deg, rgba(245, 248, 252, 0.95) 0%, rgba(240, 244, 250, 0.90) 100%) !important;
         backdrop-filter: blur(24px) saturate(190%) !important;
         -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
-        border-right: 1.5px solid rgba(210, 220, 235, 0.8) !important;
+        border-right: 1.5px solid #cbd5e1 !important;
         box-shadow: 4px 0 24px rgba(15, 23, 42, 0.05) !important;
     }
 
-    [data-testid="stSidebar"] > div:first-child {
+    [data-testid="stSidebar"] > div:first-child,
+    [data-testid="stSidebarContent"],
+    [data-testid="stSidebarUserContent"],
+    section[data-testid="stSidebar"] div[data-testid="stSidebarContent"],
+    section[data-testid="stSidebar"] .block-container {
+        padding-top: 0.85rem !important;
         background: transparent !important;
     }
 
@@ -142,10 +163,26 @@ st.markdown(
         border-color: #4338ca !important;
     }
 
-    .main .block-container {
-        padding-top: 1.1rem;
-        padding-bottom: 3.5rem;
-        max-width: 1360px;
+    /* ── ELIMINATE TOP WHITESPACE GAP IN MAIN CANVAS ── */
+    .block-container,
+    .main .block-container,
+    .stMain .block-container,
+    [data-testid="stMainBlockContainer"],
+    div[data-testid="stAppViewBlockContainer"],
+    section[data-testid="stMain"] div.block-container {
+        padding-top: 0.85rem !important;
+        padding-bottom: 3.5rem !important;
+        max-width: 1360px !important;
+    }
+
+    /* ── HEADER NAVIGATION SEPARATOR ── */
+    .header-nav-separator {
+        width: 100%;
+        height: 1.5px;
+        background: #cbd5e1;
+        margin-top: 0.75rem;
+        margin-bottom: 1.35rem;
+        border-radius: 9999px;
     }
 
     /* ── BRAND WRAPPER WITH PROPER LEAF ALIGNMENT ── */
@@ -629,7 +666,7 @@ st.markdown(
 
 st.sidebar.markdown(
     """
-    <div style="margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid rgba(203, 213, 225, 0.8);">
+    <div style="margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1.5px solid #cbd5e1;">
         <div style="display: flex; align-items: center; gap: 0.6rem;">
             <span style="font-size: 1.65rem; line-height: 1; display: inline-flex; align-items: center; justify-content: center; transform: translateY(-1px);">🍃</span>
             <div style="display: inline-flex; flex-direction: column; justify-content: center;">
@@ -836,6 +873,8 @@ with col_nav_right:
 
 if not nav_selection:
     nav_selection = "🏠 Home"
+
+st.markdown('<div class="header-nav-separator"></div>', unsafe_allow_html=True)
 
 # ---------------------------------------------------------------------------
 # MODULAR VIEWS (ABOUT US / PRIVACY POLICY / SETTINGS)
