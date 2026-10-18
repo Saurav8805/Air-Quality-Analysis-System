@@ -103,13 +103,13 @@ st.markdown(
 
     /* ── PRISTINE CANVAS WITH ATMOSPHERIC GLASS REFRACTION MESH ── */
     .stApp {
-        background-color: #f8fafc !important;
+        background-color: #f1f5f9 !important;
         background-image: 
-            radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 55%),
-            radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.09) 0px, transparent 50%),
-            radial-gradient(at 50% 45%, rgba(16, 185, 129, 0.06) 0px, transparent 60%),
-            radial-gradient(at 100% 100%, rgba(168, 85, 247, 0.07) 0px, transparent 50%),
-            radial-gradient(at 0% 100%, rgba(2, 132, 199, 0.07) 0px, transparent 55%) !important;
+            radial-gradient(circle at 10% 12%, rgba(99, 102, 241, 0.16) 0px, transparent 45%),
+            radial-gradient(circle at 90% 8%, rgba(14, 165, 233, 0.18) 0px, transparent 42%),
+            radial-gradient(circle at 50% 45%, rgba(16, 185, 129, 0.13) 0px, transparent 50%),
+            radial-gradient(circle at 95% 85%, rgba(168, 85, 247, 0.15) 0px, transparent 45%),
+            radial-gradient(circle at 5% 90%, rgba(2, 132, 199, 0.15) 0px, transparent 48%) !important;
         background-attachment: fixed !important;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         color: #0f172a;
@@ -131,6 +131,21 @@ st.markdown(
     section[data-testid="stSidebar"] .block-container {
         padding-top: 0.85rem !important;
         background: transparent !important;
+    }
+
+    /* Sidebar glass controls */
+    [data-testid="stSidebar"] div[data-baseweb="select"] > div,
+    [data-testid="stSidebar"] div[data-baseweb="input"] > div,
+    [data-testid="stSidebar"] div[data-testid="stFileUploader"] section {
+        background: rgba(255, 255, 255, 0.82) !important;
+        backdrop-filter: blur(16px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+        border-right: 1px solid rgba(203, 213, 225, 0.8) !important;
+        border-bottom: 1px solid rgba(203, 213, 225, 0.8) !important;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+        border-radius: 12px !important;
     }
 
     /* Sidebar text */
@@ -521,9 +536,21 @@ st.markdown(
         box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03) !important;
     }
 
-    /* Selectbox option text */
+    /* Selectbox option text & Dropdown Menu Glass */
     [data-baseweb="menu"] li {
         color: #0f172a !important;
+    }
+    div[data-baseweb="popover"],
+    ul[data-baseweb="menu"] {
+        background: rgba(255, 255, 255, 0.94) !important;
+        backdrop-filter: blur(24px) saturate(190%) !important;
+        -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+        border-right: 1px solid rgba(210, 220, 235, 0.8) !important;
+        border-bottom: 1px solid rgba(210, 220, 235, 0.8) !important;
+        border-radius: 14px !important;
+        box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.12) !important;
     }
 
     /* ── TABS ────────────────────────────────────── */
@@ -552,16 +579,19 @@ st.markdown(
     }
 
     .stTabs [aria-selected="true"] {
-        background: #ffffff !important;
+        background: rgba(255, 255, 255, 0.95) !important;
         color: #4338ca !important;
         border: 1px solid rgba(99, 102, 241, 0.35) !important;
-        box-shadow: 0 4px 14px rgba(99, 102, 241, 0.14) !important;
+        box-shadow: 0 4px 16px rgba(99, 102, 241, 0.16), inset 0 1px 1px #fff !important;
+        backdrop-filter: blur(12px) !important;
     }
 
-    /* ── BUTTONS ─────────────────────────────────── */
-    .stButton > button {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(243, 246, 250, 0.8) 100%) !important;
-        backdrop-filter: blur(16px) !important;
+    /* ── BUTTONS & DOWNLOAD BUTTONS ─────────────── */
+    .stButton > button,
+    .stDownloadButton > button {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(243, 246, 250, 0.80) 100%) !important;
+        backdrop-filter: blur(16px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
         border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
         border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
         border-right: 1px solid rgba(99, 102, 241, 0.35) !important;
@@ -573,10 +603,11 @@ st.markdown(
         box-shadow: 0 4px 14px rgba(99, 102, 241, 0.08) !important;
     }
 
-    .stButton > button:hover {
-        background: rgba(99, 102, 241, 0.09) !important;
-        border-color: #4f46e5 !important;
-        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.2) !important;
+    .stButton > button:hover,
+    .stDownloadButton > button:hover {
+        background: rgba(99, 102, 241, 0.1) !important;
+        border-color: #4338ca !important;
+        box-shadow: 0 8px 24px rgba(99, 102, 241, 0.22) !important;
         transform: translateY(-2px) !important;
         color: #312e81 !important;
     }
@@ -604,30 +635,57 @@ st.markdown(
         font-weight: 700 !important;
     }
 
-    /* Dataframe & table styling */
-    .stDataFrame {
+    /* ── DATAFRAME & TABLE STYLING ───────────────── */
+    .stDataFrame,
+    [data-testid="stDataFrame"],
+    [data-testid="stTable"] {
         background: rgba(255, 255, 255, 0.85) !important;
-        backdrop-filter: blur(16px) !important;
-        border-radius: 14px !important;
+        backdrop-filter: blur(16px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+        border-radius: 16px !important;
         border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
         border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
         border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
         border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
-        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05) !important;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+        overflow: hidden !important;
     }
 
-    /* Expander */
+    /* ── EXPANDER (TRUE FROSTED GLASS) ───────────── */
+    details[data-testid="stExpander"],
     .streamlit-expanderHeader {
-        background: rgba(255, 255, 255, 0.85) !important;
-        backdrop-filter: blur(12px) !important;
-        border-radius: 12px !important;
-        color: #0f172a !important;
-        font-weight: 600 !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1px solid rgba(255, 255, 255, 0.95) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(243, 247, 252, 0.70) 100%) !important;
+        backdrop-filter: blur(20px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
         border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
         border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
-        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
+        border-radius: 16px !important;
+        color: #0f172a !important;
+        font-weight: 600 !important;
+        box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95) !important;
+        margin-bottom: 1rem !important;
+        overflow: hidden !important;
+    }
+
+    /* ── MATPLOTLIB CHARTS IN FROSTED GLASS CARDS ── */
+    div[data-testid="stImage"] {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(243, 246, 250, 0.72) 100%) !important;
+        backdrop-filter: blur(20px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
+        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
+        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
+        border-radius: 20px !important;
+        padding: 1rem !important;
+        box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+    }
+    div[data-testid="stImage"]:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 18px 40px -6px rgba(99, 102, 241, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
     }
 
     /* Slider */
@@ -1231,12 +1289,12 @@ with tab_comp:
                 st.markdown(
                     f"""
                     <div class="comp-card comp-card-a">
-                        <h3 style="color: #06b6d4; margin: 0 0 0.5rem 0;">📍 {loc_a}</h3>
-                        <p style="margin: 0.2rem 0; color: #cbd5e1;">Mean AQI: <b>{stats_a.mean:.1f}</b> &nbsp;
+                        <h3 style="color: #0284c7; margin: 0 0 0.5rem 0; font-weight: 800;">📍 {loc_a}</h3>
+                        <p style="margin: 0.2rem 0; color: #334155;">Mean AQI: <b style="color: #0f172a;">{stats_a.mean:.1f}</b> &nbsp;
                             <span class="glass-badge" style="background: {col_a}33; color: {col_a}; border: 1px solid {col_a};">{cat_a}</span>
                         </p>
-                        <p style="margin: 0.2rem 0; color: #cbd5e1;">Median AQI: <b>{stats_a.median:.1f}</b> | Range: <b>{stats_a.minimum:.0f} - {stats_a.maximum:.0f}</b></p>
-                        <p style="margin: 0.2rem 0; color: #94a3b8; font-size: 0.85rem;">Valid Observations: <b>{stats_a.count}</b> | Std Dev: <b>±{stats_a.std:.1f}</b></p>
+                        <p style="margin: 0.2rem 0; color: #334155;">Median AQI: <b style="color: #0f172a;">{stats_a.median:.1f}</b> | Range: <b style="color: #0f172a;">{stats_a.minimum:.0f} - {stats_a.maximum:.0f}</b></p>
+                        <p style="margin: 0.2rem 0; color: #64748b; font-size: 0.85rem;">Valid Observations: <b style="color: #0f172a;">{stats_a.count}</b> | Std Dev: <b style="color: #0f172a;">±{stats_a.std:.1f}</b></p>
                     </div>
                     """,
                     unsafe_allow_html=True,
@@ -1251,11 +1309,11 @@ with tab_comp:
                 st.markdown(
                     f"""
                     <div class="comp-card comp-card-b">
-                        <h3 style="color: #f43f5e; margin: 0 0 0.5rem 0;">📍 {loc_b}</h3>
-                        <p style="margin: 0.2rem 0; color: #cbd5e1;">Mean AQI: <b>{stats_b.mean:.1f}</b> &nbsp;
+                        <h3 style="color: #7c3aed; margin: 0 0 0.5rem 0; font-weight: 800;">📍 {loc_b}</h3>
+                        <p style="margin: 0.2rem 0; color: #334155;">Mean AQI: <b style="color: #0f172a;">{stats_b.mean:.1f}</b> &nbsp;
                             <span class="glass-badge" style="background: {col_b}33; color: {col_b}; border: 1px solid {col_b};">{cat_b}</span>
                         </p>
-                        <p style="margin: 0.2rem 0; color: #cbd5e1;">Median AQI: <b>{stats_b.median:.1f}</b> | Range: <b>{stats_b.minimum:.0f} - {stats_b.maximum:.0f}</b></p>
+                        <p style="margin: 0.2rem 0; color: #334155;">Median AQI: <b style="color: #0f172a;">{stats_b.median:.1f}</b> | Range: <b style="color: #0f172a;">{stats_b.minimum:.0f} - {stats_b.maximum:.0f}</b></p>
                         <p style="margin: 0.2rem 0; color: {diff_color}; font-size: 0.85rem;">Delta vs {loc_a}: <b>{diff_str}</b></p>
                     </div>
                     """,
@@ -1468,22 +1526,22 @@ with tab_advisory:
     st.markdown(
         f"""
         <div class="glass-card" style="margin-top: 1rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem;">
-                <h4 style="margin: 0; color: #38bdf8;">Assessment for: {profile_choice}</h4>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.8rem; flex-wrap: wrap; gap: 0.5rem;">
+                <h4 style="margin: 0; color: #0284c7; font-weight: 800;">Assessment for: {profile_choice}</h4>
                 <span class="glass-badge" style="{badge_style}">Current Mean AQI: {cur_aqi:.1f} ({status_txt})</span>
             </div>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem;">
                 <div class="glass-card" style="margin-bottom: 0;">
                     <div class="glass-card-title">🏃 Outdoor Physical Activity</div>
-                    <p style="font-size: 0.9rem; color: #cbd5e1; margin: 0.4rem 0 0 0;">{outdoor_act}</p>
+                    <p style="font-size: 0.9rem; color: #334155; margin: 0.4rem 0 0 0; line-height: 1.5;">{outdoor_act}</p>
                 </div>
                 <div class="glass-card" style="margin-bottom: 0;">
                     <div class="glass-card-title">😷 Respiratory Mask Guidance</div>
-                    <p style="font-size: 0.9rem; color: #cbd5e1; margin: 0.4rem 0 0 0;">{mask_need}</p>
+                    <p style="font-size: 0.9rem; color: #334155; margin: 0.4rem 0 0 0; line-height: 1.5;">{mask_need}</p>
                 </div>
                 <div class="glass-card" style="margin-bottom: 0;">
                     <div class="glass-card-title">🏠 Indoor Air & Purifier Strategy</div>
-                    <p style="font-size: 0.9rem; color: #cbd5e1; margin: 0.4rem 0 0 0;">{purifier_need}</p>
+                    <p style="font-size: 0.9rem; color: #334155; margin: 0.4rem 0 0 0; line-height: 1.5;">{purifier_need}</p>
                 </div>
             </div>
         </div>
@@ -1543,16 +1601,16 @@ with tab_sim:
                 <div class="glass-card-title">Baseline vs Projected AQI</div>
                 <div style="display: flex; align-items: baseline; gap: 1rem; margin-top: 0.5rem;">
                     <div>
-                        <span style="font-size: 0.8rem; color: #94a3b8;">Baseline:</span>
-                        <div style="font-size: 1.4rem; font-weight: 700; color: #94a3b8;">{base_aqi:.1f}</div>
+                        <span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">Baseline:</span>
+                        <div style="font-size: 1.4rem; font-weight: 800; color: #475569;">{base_aqi:.1f}</div>
                     </div>
-                    <div style="font-size: 1.6rem; color: #38bdf8;">➔</div>
+                    <div style="font-size: 1.5rem; color: #0284c7; font-weight: 900;">➔</div>
                     <div>
-                        <span style="font-size: 0.8rem; color: #38bdf8;">Projected:</span>
-                        <div style="font-size: 1.8rem; font-weight: 800; color: #ffffff;">{projected_aqi:.1f}</div>
+                        <span style="font-size: 0.8rem; color: #0284c7; font-weight: 700;">Projected:</span>
+                        <div style="font-size: 1.8rem; font-weight: 900; color: #0f172a;">{projected_aqi:.1f}</div>
                     </div>
                 </div>
-                <p style="margin: 0.6rem 0 0 0; color: {'#10b981' if net_change < 0 else '#f43f5e'}; font-weight: 700; font-size: 0.95rem;">
+                <p style="margin: 0.6rem 0 0 0; color: {'#059669' if net_change < 0 else '#e11d48'}; font-weight: 800; font-size: 0.95rem;">
                     Net Change: {net_change:+.1f} pts ({net_change/base_aqi*100:+.1f}%)
                 </p>
             </div>
@@ -1569,12 +1627,12 @@ with tab_sim:
                     <span class="glass-badge" style="background: {mean_color}33; color: {mean_color}; border: 1px solid {mean_color};">
                         {mean_cat}
                     </span>
-                    <span style="margin: 0 0.5rem; color: #94a3b8;">➔</span>
+                    <span style="margin: 0 0.5rem; color: #64748b; font-weight: 700;">➔</span>
                     <span class="glass-badge" style="background: {proj_col}33; color: {proj_col}; border: 1px solid {proj_col}; font-size: 0.9rem;">
                         {proj_cat}
                     </span>
                 </div>
-                <p style="margin: 0.8rem 0 0 0; font-size: 0.82rem; color: #94a3b8;">{sim_desc}</p>
+                <p style="margin: 0.8rem 0 0 0; font-size: 0.86rem; color: #475569; line-height: 1.5;">{sim_desc}</p>
             </div>
             """,
             unsafe_allow_html=True,
