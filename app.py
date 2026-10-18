@@ -101,15 +101,16 @@ st.markdown(
         margin: 0 !important;
     }
 
-    /* ── PRISTINE CANVAS WITH ATMOSPHERIC GLASS REFRACTION MESH ── */
+    /* ── PRISTINE CANVAS WITH ATMOSPHERIC CHROMATIC REFRACTION MESH ── */
     .stApp {
         background-color: #f1f5f9 !important;
         background-image: 
-            radial-gradient(circle at 10% 12%, rgba(99, 102, 241, 0.16) 0px, transparent 45%),
-            radial-gradient(circle at 90% 8%, rgba(14, 165, 233, 0.18) 0px, transparent 42%),
-            radial-gradient(circle at 50% 45%, rgba(16, 185, 129, 0.13) 0px, transparent 50%),
-            radial-gradient(circle at 95% 85%, rgba(168, 85, 247, 0.15) 0px, transparent 45%),
-            radial-gradient(circle at 5% 90%, rgba(2, 132, 199, 0.15) 0px, transparent 48%) !important;
+            radial-gradient(circle at 10% 12%, rgba(99, 102, 241, 0.28) 0px, transparent 48%),
+            radial-gradient(circle at 90% 8%, rgba(14, 165, 233, 0.30) 0px, transparent 46%),
+            radial-gradient(circle at 50% 38%, rgba(16, 185, 129, 0.24) 0px, transparent 52%),
+            radial-gradient(circle at 92% 76%, rgba(168, 85, 247, 0.26) 0px, transparent 48%),
+            radial-gradient(circle at 6% 88%, rgba(2, 132, 199, 0.28) 0px, transparent 50%),
+            radial-gradient(circle at 72% 92%, rgba(245, 158, 11, 0.20) 0px, transparent 46%) !important;
         background-attachment: fixed !important;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         color: #0f172a;
@@ -117,11 +118,11 @@ st.markdown(
 
     /* ── SIDEBAR — sleek frosted glass control panel with crisp separator ── */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, rgba(245, 248, 252, 0.95) 0%, rgba(240, 244, 250, 0.90) 100%) !important;
-        backdrop-filter: blur(24px) saturate(190%) !important;
-        -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
-        border-right: 1.5px solid #cbd5e1 !important;
-        box-shadow: 4px 0 24px rgba(15, 23, 42, 0.05) !important;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.76) 0%, rgba(245, 249, 255, 0.65) 100%) !important;
+        backdrop-filter: blur(28px) saturate(190%) !important;
+        -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+        border-right: 1.5px solid rgba(203, 213, 225, 0.8) !important;
+        box-shadow: 4px 0 28px rgba(15, 23, 42, 0.04) !important;
     }
 
     [data-testid="stSidebar"] > div:first-child,
@@ -137,14 +138,14 @@ st.markdown(
     [data-testid="stSidebar"] div[data-baseweb="select"] > div,
     [data-testid="stSidebar"] div[data-baseweb="input"] > div,
     [data-testid="stSidebar"] div[data-testid="stFileUploader"] section {
-        background: rgba(255, 255, 255, 0.82) !important;
+        background: rgba(255, 255, 255, 0.76) !important;
         backdrop-filter: blur(16px) saturate(180%) !important;
         -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(203, 213, 225, 0.8) !important;
-        border-bottom: 1px solid rgba(203, 213, 225, 0.8) !important;
-        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.7) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.7) !important;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
         border-radius: 12px !important;
     }
 
@@ -250,17 +251,17 @@ st.markdown(
         letter-spacing: 0.02em;
     }
 
-    /* ── SEGMENTED CONTROL / NAVBAR STYLING (NO RED BORDERS) ── */
+    /* ── SEGMENTED CONTROL / NAVBAR STYLING ── */
     div[data-testid="stSegmentedControl"] {
-        background: rgba(240, 244, 250, 0.85) !important;
-        backdrop-filter: blur(24px) !important;
-        -webkit-backdrop-filter: blur(24px) !important;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
+        background: rgba(255, 255, 255, 0.70) !important;
+        backdrop-filter: blur(24px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.7) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.7) !important;
         border-radius: 9999px !important;
-        padding: 4px !important;
+        padding: 5px !important;
         box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95) !important;
     }
 
@@ -286,8 +287,8 @@ st.markdown(
 
     div[data-testid="stSegmentedControl"] button:hover {
         color: #1e1b4b !important;
-        background: rgba(255, 255, 255, 0.65) !important;
-        border-color: rgba(255, 255, 255, 0.8) !important;
+        background: rgba(255, 255, 255, 0.75) !important;
+        border-color: rgba(255, 255, 255, 0.9) !important;
     }
 
     div[data-testid="stSegmentedControl"] button[aria-checked="true"],
@@ -296,8 +297,8 @@ st.markdown(
         background: linear-gradient(135deg, #4338ca 0%, #2563eb 100%) !important;
         color: #ffffff !important;
         font-weight: 800 !important;
-        border: 1px solid rgba(255, 255, 255, 0.4) !important;
-        box-shadow: 0 4px 16px rgba(67, 56, 202, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
+        border: 1px solid rgba(255, 255, 255, 0.45) !important;
+        box-shadow: 0 4px 16px rgba(67, 56, 202, 0.32), inset 0 1px 1px rgba(255, 255, 255, 0.45) !important;
     }
 
     div[data-testid="stSegmentedControl"] button[aria-checked="true"] *,
@@ -305,19 +306,19 @@ st.markdown(
         color: #ffffff !important;
     }
 
-    /* ── REAL 3D FROSTED GLASS HERO SECTION ───────────────────────── */
+    /* ── AUTHENTIC 3D FROSTED GLASS HERO SECTION ───────────────────────── */
     .glass-hero {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(243, 247, 252, 0.72) 50%, rgba(238, 244, 250, 0.62) 100%) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(245, 249, 255, 0.54) 100%) !important;
         backdrop-filter: blur(32px) saturate(200%) !important;
         -webkit-backdrop-filter: blur(32px) saturate(200%) !important;
         border-top: 1.5px solid rgba(255, 255, 255, 1) !important;
         border-left: 1.5px solid rgba(255, 255, 255, 1) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.6) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.6) !important;
         border-radius: 24px !important;
         padding: 2.2rem 2.4rem !important;
         margin-bottom: 1.4rem !important;
-        box-shadow: 0 24px 48px -12px rgba(15, 23, 42, 0.09), 0 6px 18px -3px rgba(15, 23, 42, 0.03), inset 0 2px 4px 0 rgba(255, 255, 255, 1) !important;
+        box-shadow: 0 20px 48px -12px rgba(15, 23, 42, 0.07), 0 4px 14px -2px rgba(15, 23, 42, 0.03), inset 0 2px 4px 0 rgba(255, 255, 255, 1) !important;
         position: relative;
     }
 
@@ -366,13 +367,13 @@ st.markdown(
     }
 
     .hero-stat-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.90) 0%, rgba(245, 248, 252, 0.75) 100%) !important;
-        backdrop-filter: blur(16px) !important;
-        -webkit-backdrop-filter: blur(16px) !important;
-        border-top: 1px solid rgba(255, 255, 255, 1) !important;
-        border-left: 1px solid rgba(255, 255, 255, 1) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.76) 0%, rgba(245, 249, 255, 0.58) 100%) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 1) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 1) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.6) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.6) !important;
         border-radius: 16px !important;
         padding: 0.95rem 1.2rem !important;
         box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 1) !important;
@@ -400,18 +401,18 @@ st.markdown(
         margin-top: 0.2rem;
     }
 
-    /* ── REAL FROSTED GLASS CARDS (BEVELED SPECULAR HIGHLIGHTS) ── */
+    /* ── AUTHENTIC FROSTED GLASS CARDS (PRISMATIC SPECULAR HIGHLIGHTS) ── */
     .glass-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.82) 0%, rgba(243, 246, 250, 0.65) 100%) !important;
-        backdrop-filter: blur(24px) saturate(190%) !important;
-        -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.68) 0%, rgba(245, 249, 255, 0.52) 100%) !important;
+        backdrop-filter: blur(28px) saturate(190%) !important;
+        -webkit-backdrop-filter: blur(28px) saturate(190%) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 1) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 1) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.6) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.6) !important;
         border-radius: 20px !important;
         padding: 1.35rem 1.5rem !important;
-        box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.03), inset 0 1px 2px 0 rgba(255, 255, 255, 1) !important;
+        box-shadow: 0 16px 36px -8px rgba(15, 23, 42, 0.07), 0 4px 12px -2px rgba(15, 23, 42, 0.03), inset 0 1px 2px 0 rgba(255, 255, 255, 1) !important;
         transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         margin-bottom: 1.1rem;
         color: #0f172a;
@@ -502,55 +503,80 @@ st.markdown(
     }
 
     .comp-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(243, 246, 250, 0.70) 100%) !important;
-        backdrop-filter: blur(24px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
-        border-radius: 18px !important;
-        padding: 1.3rem;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
-        box-shadow: 0 12px 28px -5px rgba(15, 23, 42, 0.07), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.70) 0%, rgba(245, 249, 255, 0.54) 100%) !important;
+        backdrop-filter: blur(28px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+        border-radius: 20px !important;
+        padding: 1.35rem 1.45rem !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 1) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.6) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.6) !important;
+        box-shadow: 0 14px 32px -6px rgba(15, 23, 42, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1) !important;
         color: #0f172a;
     }
 
     .comp-card-a {
-        border-left: 4px solid #0284c7 !important;
+        border-left: 4.5px solid #0284c7 !important;
     }
 
     .comp-card-b {
-        border-left: 4px solid #7c3aed !important;
+        border-left: 4.5px solid #7c3aed !important;
     }
 
-    /* ── SELECTBOXES / DROPDOWNS ─────────────────── */
+    /* ── SELECTBOXES & DROPDOWNS (ZERO BLACK ARTIFACTS) ─────────────────── */
+    div[data-baseweb="select"],
+    div[data-testid="stSelectbox"] > div {
+        background: transparent !important;
+    }
+
     div[data-baseweb="select"] > div {
-        background-color: rgba(255, 255, 255, 0.88) !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.8) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.8) !important;
-        backdrop-filter: blur(16px) !important;
-        border-radius: 10px !important;
+        background-color: rgba(255, 255, 255, 0.78) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.7) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.7) !important;
+        backdrop-filter: blur(20px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+        border-radius: 12px !important;
         color: #0f172a !important;
-        box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03) !important;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+    }
+
+    div[data-baseweb="select"]:hover > div {
+        border-color: rgba(99, 102, 241, 0.45) !important;
+        box-shadow: 0 6px 18px rgba(99, 102, 241, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+    }
+
+    div[data-baseweb="select"] * {
+        color: #0f172a !important;
+    }
+    div[data-baseweb="select"] svg {
+        fill: #475569 !important;
     }
 
     /* Selectbox option text & Dropdown Menu Glass */
-    [data-baseweb="menu"] li {
-        color: #0f172a !important;
-    }
     div[data-baseweb="popover"],
     ul[data-baseweb="menu"] {
         background: rgba(255, 255, 255, 0.94) !important;
         backdrop-filter: blur(24px) saturate(190%) !important;
         -webkit-backdrop-filter: blur(24px) saturate(190%) !important;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.8) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.8) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.7) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.7) !important;
         border-radius: 14px !important;
         box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.12) !important;
+    }
+
+    [data-baseweb="menu"] li {
+        color: #0f172a !important;
+        border-radius: 8px !important;
+        transition: background 0.15s ease !important;
+    }
+
+    [data-baseweb="menu"] li:hover {
+        background: rgba(99, 102, 241, 0.09) !important;
     }
 
     /* ── TABS ────────────────────────────────────── */
@@ -614,15 +640,16 @@ st.markdown(
 
     /* ── METRICS & GENERAL TEXT ──────────────────── */
     [data-testid="stMetric"] {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(243, 246, 250, 0.70) 100%) !important;
-        backdrop-filter: blur(16px) !important;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(245, 249, 255, 0.55) 100%) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 1) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 1) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.6) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.6) !important;
         border-radius: 16px !important;
         padding: 0.9rem 1.1rem !important;
-        box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1) !important;
     }
 
     [data-testid="stMetricValue"] {
@@ -639,53 +666,53 @@ st.markdown(
     .stDataFrame,
     [data-testid="stDataFrame"],
     [data-testid="stTable"] {
-        background: rgba(255, 255, 255, 0.85) !important;
-        backdrop-filter: blur(16px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+        background: rgba(255, 255, 255, 0.75) !important;
+        backdrop-filter: blur(20px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
         border-radius: 16px !important;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
-        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.65) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.65) !important;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
         overflow: hidden !important;
     }
 
-    /* ── EXPANDER (TRUE FROSTED GLASS) ───────────── */
+    /* ── EXPANDER (AUTHENTIC FROSTED GLASS) ───────────── */
     details[data-testid="stExpander"],
     .streamlit-expanderHeader {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85) 0%, rgba(243, 247, 252, 0.70) 100%) !important;
-        backdrop-filter: blur(20px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0%, rgba(245, 249, 255, 0.55) 100%) !important;
+        backdrop-filter: blur(24px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.65) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.65) !important;
         border-radius: 16px !important;
         color: #0f172a !important;
         font-weight: 600 !important;
-        box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 1) !important;
         margin-bottom: 1rem !important;
         overflow: hidden !important;
     }
 
     /* ── MATPLOTLIB CHARTS IN FROSTED GLASS CARDS ── */
     div[data-testid="stImage"] {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.88) 0%, rgba(243, 246, 250, 0.72) 100%) !important;
-        backdrop-filter: blur(20px) saturate(180%) !important;
-        -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.75) 0%, rgba(245, 249, 255, 0.58) 100%) !important;
+        backdrop-filter: blur(24px) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 1) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 1) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.6) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.6) !important;
         border-radius: 20px !important;
         padding: 1rem !important;
-        box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.06), inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 12px 30px -6px rgba(15, 23, 42, 0.06), inset 0 1px 1px rgba(255, 255, 255, 1) !important;
         transition: transform 0.25s ease, box-shadow 0.25s ease !important;
     }
     div[data-testid="stImage"]:hover {
         transform: translateY(-2px) !important;
-        box-shadow: 0 18px 40px -6px rgba(99, 102, 241, 0.12), inset 0 1px 1px rgba(255, 255, 255, 0.95) !important;
+        box-shadow: 0 18px 40px -6px rgba(99, 102, 241, 0.12), inset 0 1px 1px rgba(255, 255, 255, 1) !important;
     }
 
     /* Slider */
@@ -695,13 +722,14 @@ st.markdown(
 
     /* Info/Warning/Error boxes */
     .stInfo, .stAlert {
-        background: rgba(255, 255, 255, 0.88) !important;
-        backdrop-filter: blur(12px) !important;
+        background: rgba(255, 255, 255, 0.78) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
         border-radius: 14px !important;
-        border-top: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-left: 1.5px solid rgba(255, 255, 255, 0.95) !important;
-        border-right: 1px solid rgba(210, 220, 235, 0.75) !important;
-        border-bottom: 1px solid rgba(210, 220, 235, 0.75) !important;
+        border-top: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-left: 1.5px solid rgba(255, 255, 255, 0.98) !important;
+        border-right: 1.2px solid rgba(203, 213, 225, 0.65) !important;
+        border-bottom: 1.2px solid rgba(203, 213, 225, 0.65) !important;
         box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04) !important;
     }
 
